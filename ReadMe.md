@@ -1,8 +1,18 @@
 
 # Shift-Net
+<img src="./imgs/01_in.png" width="210"/> <img src="./imgs/01_out.png" width="210"/>
+<img src="./imgs/02_in.png" width="210"/> <img src="./imgs/02_out.png" width="210"/>
+<img src="./imgs/03_in.png" width="210"/> <img src="./imgs/03_out.png" width="210"/>
+<img src="./imgs/04_in.png" width="210"/> <img src="./imgs/04_out.png" width="210"/>
+<img src="./imgs/06_in.png" width="210"/> <img src="./imgs/06_out.png" width="210"/>
+<img src="./imgs/10_in.png" width="210"/> <img src="./imgs/10_out.png" width="210"/>
+<img src="./imgs/r_01_in.png" width="210"/> <img src="./imgs/r_01_out.png" width="210"/>
+<img src="./imgs/r_02_in.png" width="210"/> <img src="./imgs/r_02_out.png" width="210"/>
+<img src="./imgs/r_03_in.png" width="210"/> <img src="./imgs/r_03_out.png" width="210"/>
+<img src="./imgs/r_04_in.png" width="210"/> <img src="./imgs/r_04_out.png" width="210"/>
 
 ## Getting Started
-We expect you have an nvidia GPU and have install CUDA.
+We expect you have an nvidia GPU and have installed CUDA.
 The code does not support running on CPU for now.
 ### Installation
 - Install torch and dependencies from https://github.com/torch/distro
@@ -20,7 +30,7 @@ cd Shift-Net
 
 ### Download pre-trained model
 ```bash
-bash download_model.sh
+bash  scripts/download_models.sh
 ```
 The model will be download and unzipped.
 
