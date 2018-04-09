@@ -1,9 +1,8 @@
 require 'nn'
 
 function printNet(net)
-
     for i = 1, net:size(1) do
-        print(string.format("%d: %s", i, net.modules[i]))
+        print(string.format("%d:\t%s", i, net.modules[i]))
     end
     
 end
@@ -19,7 +18,6 @@ function findModule(net, layer)
 end
 
 -- Only useful for those using conv outputs as mask(need to binary)
--- If calls cal_feat_mask, then do not call binary_mask
 -- It takes in conv_features to make binarized with a specific threshold.
 function binary_mask(inMask, threshold)
     assert(inMask:nDimension() == 2,'mask must be 2 dimensions')

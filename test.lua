@@ -23,7 +23,7 @@ opt = {
     gpu = 1,                  -- gpu = 0 is CPU mode. gpu=X is GPU mode on GPU X
     how_many = 'all',         -- how many test images to run (set to all to run on every image found in the data/phase folder)
     which_direction = 'AtoB', -- AtoB or BtoA
-    phase = 'paris_test',            -- train, val, test ,etc
+    phase = 'paris_test',     -- train, val, test ,etc
     preprocess = 'regular',   -- for special purpose preprocessing, e.g., for colorization, change this (selects preprocessing functions in util.lua)
     aspect_ratio = 1.0,       -- aspect ratio of result images
     name = 'paris_train_shiftNet',  -- name of experiment, selects which model to run, should generally should be passed on command line

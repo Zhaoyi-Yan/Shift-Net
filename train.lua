@@ -147,7 +147,7 @@ function defineG(input_nc, output_nc, ngf)
     end
    
     netG:apply(weights_init)
---********** reassgin the correct maskModel weigth**************
+    --reassgin the correct maskModel weight
     printNet(netG)
     netG.modules[41].weight:fill(1/16)
     netG.modules[42].weight:fill(1/16)
