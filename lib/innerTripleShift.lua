@@ -53,10 +53,6 @@ function InnerTripleShift:updateOutput(input)
         -- has done
         assert(self.flag ~= nil, 'Lack of \'self.flag!\'')
     else
-        if self.cal_fixedFlag then
-            print('calculate self.flag')
-        end
-
         self.flag, self.nonmask_point_idx, self.flatten_offsets = cal_mask_given_mask_thred(latter_all:narrow(1,1,1):squeeze(), mask, self.shift_size, self.stride, self.mask_thred)
 
         self.cal_fixedFlag = false

@@ -67,9 +67,19 @@ th -ldisplay.start
 ```
 - Open this URL in your browser: [http://localhost:8000](http://localhost:8000)
 
+- If you want to train a model that can handle random mask inpainting, then set
+
+`mask_type`: `'random'`
+
+`fixed_mask`: `false`
+
+You can set a float number to `res`, e.g., `local res = 0.06`, the lower it is, the more continuous the output will be.
+When test the model, these two options should keep consistent with those that you model are trained with.
+
 ### Test
 Before test, you should change `DATA_ROOT`, `phase`, `name`, `checkpoint_dir` and `which_epoch`.
 For example, if you want to test the 30-th epoch of your trained model, then
+
 `DATA_ROOT`:    `./datasets/Paris_StreetView_Dataset/`
 
 `phase`:        `paris_train`
