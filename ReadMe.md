@@ -1,5 +1,8 @@
 
 # Shift-Net
+Our code is based on `torch7`, however if you perfer pytorch, please click here [Shift-Net_pytorch](https://github.com/Zhaoyi-Yan/Shift-Net_pytorch).
+for our pytorch implementation.
+
 <img src="./imgs/01_in.png" width="210"/> <img src="./imgs/01_out.png" width="210"/>
 <img src="./imgs/02_in.png" width="210"/> <img src="./imgs/02_out.png" width="210"/>
 <img src="./imgs/03_in.png" width="210"/> <img src="./imgs/03_out.png" width="210"/>
