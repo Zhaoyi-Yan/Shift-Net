@@ -30,7 +30,6 @@ function MaxCoord:updateOutput(input)
         self.output = torch.FloatTensor():resizeAs(input):zero()
     end
     local N = input:size(1)
-    -- self.ind must be a tensor of 1 ndimension
     local h = self.output:size(3)
     local w = self.output:size(4)
     local spSize = h*w

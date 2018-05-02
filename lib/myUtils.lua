@@ -2,7 +2,7 @@ require 'nn'
 
 function printNet(net)
     for i = 1, net:size(1) do
-        print(string.format("%d:\t%s", i, net.modules[i]))
+        print(string.format("%d:\t%s\t%s", i, net.modules[i], net.modules[i].cls))
     end
     
 end

@@ -1,6 +1,6 @@
 require 'nngraph'
 
-function defineG_shiftNet(input_nc,output_nc,ngf, swapTripleLayer32, addCos32, bottleneck)
+function defineG_shiftNet(input_nc,output_nc,ngf, shiftTripleLayer32, addCos32, bottleneck)
 
     local maskModel = nil      -- assign correct weight after apply_weight
     local conv1 = nn.SpatialConvolution(1, 1, 4, 4, 2, 2, 1, 1)
@@ -48,7 +48,7 @@ function defineG_shiftNet(input_nc,output_nc,ngf, swapTripleLayer32, addCos32, b
     -- input is (ngf * 4) x 32 x 32
     local d5_cos = {d5_, maskModel} - nn.JoinTable(2) - nn.ReLU(true) - addCos32
     local d5 = {d5_,e3, maskModel} - nn.JoinTable(2)
-    local d6_ = d5 - nn.ReLU(true) - swapTripleLayer32 - nn.SpatialFullConvolution(ngf * 4 * 3, ngf * 2, 4, 4, 2, 2, 1, 1) - nn.InstanceNormalization(ngf * 2)
+    local d6_ = d5 - nn.ReLU(true) - shiftTripleLayer32 - nn.SpatialFullConvolution(ngf * 4 * 3, ngf * 2, 4, 4, 2, 2, 1, 1) - nn.InstanceNormalization(ngf * 2)
     -- input is (ngf * 2) x 64 x 64
     local d6 = {d6_,e2} - nn.JoinTable(2)
     local d7_ = d6 - nn.ReLU(true) - nn.SpatialFullConvolution(ngf * 2 * 2, ngf, 4, 4, 2, 2, 1, 1) - nn.InstanceNormalization(ngf)

@@ -34,7 +34,7 @@ function InnerTripleShift:updateOutput(input)
 
     local former_all = input:narrow(2, 1, self.c/2)
     local latter_all = input:narrow(2, self.c/2 + 1, self.c/2)
-    local swapped_latter_all = torch.Tensor(self.bz, self.c/2, self.h, self.w):typeAs(input)
+    local shift_latter_all = torch.Tensor(self.bz, self.c/2, self.h, self.w):typeAs(input)
 
     -- Get the mask and inv_mask, they are all one channel.
     local mask_float = input:narrow(2, self.c_real, 1):narrow(1,1,1):squeeze()  -- 2D
@@ -48,7 +48,6 @@ function InnerTripleShift:updateOutput(input)
     self.latent_in_mask[self.inv_ex_mask:repeatTensor(self.bz, 1, 1, 1)] = 0 -- Get the encoded latent from skip connections.
 
     -- Only `fixed_mask = true` and we have calculated the flag and mask_point_idx before, then we do not need to calculate them again!
-    -- [TO DO: make it computation efficient.]
     if self.fixed_mask and self.cal_fixedFlag == false then
         -- has done
         assert(self.flag ~= nil, 'Lack of \'self.flag!\'')
@@ -106,16 +105,16 @@ function InnerTripleShift:updateOutput(input)
 
         local result_tmp = conv_new_dec:forward(kbar)  
 
-        swapped_latter_all[idx] = result_tmp
+        shift_latter_all[idx] = result_tmp
         self.ind_lst[idx] = ind
     end
 
     -- Mask the swapped features.
-    swapped_latter_all[self.inv_ex_mask:repeatTensor(self.bz, 1, 1, 1)] = 0
+    shift_latter_all[self.inv_ex_mask:repeatTensor(self.bz, 1, 1, 1)] = 0
 
 
     -- construct final self.output
-    self.output = torch.cat({former_all, latter_all, swapped_latter_all}, 2)
+    self.output = torch.cat({former_all, latter_all, shift_latter_all}, 2)
     return self.output
 end
 
@@ -166,13 +165,4 @@ end
 function InnerTripleShift:clearState()
     self.output = self.output.new()
     self.gradInput = self.gradInput.new()
-
-end
-
-function InnerTripleShift:setCalculateFlagTrue()
-    self.cal_fixedFlag = true
-end
-
-function InnerTripleShift:setCalculateFlagFalse()
-    self.cal_fixedFlag = false
 end

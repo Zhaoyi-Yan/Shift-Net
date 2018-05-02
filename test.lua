@@ -74,9 +74,6 @@ local target = torch.FloatTensor(opt.batchSize,3,opt.fineSize,opt.fineSize)
 print('checkpoints_dir', opt.checkpoints_dir)
 local netG = util.load(paths.concat(opt.checkpoints_dir, opt.netG_name .. '.t7'), opt)
 
-
-printNet(netG)
-
 function TableConcat(t1,t2)
     for i=1,#t2 do
         t1[#t1+1] = t2[i]
