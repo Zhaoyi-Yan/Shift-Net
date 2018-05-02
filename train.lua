@@ -135,7 +135,7 @@ function defineG(input_nc, output_nc, ngf)
 
     local shiftTripleLayer = nn.InnerTripleShift('innerTripleShift_32',opt.shift_size, opt.threshold, opt.stride, opt.mask_thred, opt.triple_weight, opt.fixed_mask)
     local GT_latent_fake = torch.CudaTensor(opt.batchSize, ngf*4, 32, 32)
-    local addCos32 = nn.AddCos('addCos_32_fake', constrainCriterion, opt.threshold, GT_latent_fake, opt.strength)
+    local addCos32 = nn.AddCos('addCos_32', constrainCriterion, opt.threshold, GT_latent_fake, opt.strength)
 
 
     local netG = nil
@@ -329,10 +329,9 @@ function createRealFake()
     netG:forward({real_B, mask_global})
     GT_latent_32 = netG.modules[46].latent_in_mask -- get the encoded feature of GT.
 
-    -- constructe the real addCos and replace the fake one with the real one.
-    local addCos32_real = nn.AddCos('addCos_32_real', constrainCriterion, opt.threshold, GT_latent_32, opt.strength)
+    local addCos32_real = nn.AddCos('addCos_32', constrainCriterion, opt.threshold, GT_latent_32, opt.strength)
     netG:replace(function(module)
-        if  module.cls == 'addCos_32_fake' then
+        if  module.cls == 'addCos_32' then
             return addCos32_real:cuda()
         else
             return module
