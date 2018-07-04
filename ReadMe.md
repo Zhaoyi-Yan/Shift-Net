@@ -98,7 +98,15 @@ The first two options determine where the dataset is, and the rest define the fo
 ```bash
 th test.lua
 ```
-
+If you find this paper useful, please cite:
+```
+@article{yan2018shift,
+  title={Shift-Net: Image Inpainting via Deep Feature Rearrangement},
+  author={Yan, Zhaoyi and Li, Xiaoming and Li, Mu and Zuo, Wangmeng and Shan, Shiguang},
+  journal={arXiv preprint arXiv:1801.09392},
+  year={2018}
+}
+```
 
 ## Acknowledgments
 We benefit a lot from [pix2pix](https://github.com/phillipi/pix2pix) and [DCGAN](https://github.com/soumith/dcgan.torch). The data loader is modified from [pix2pix](https://github.com/phillipi/pix2pix) and the implemetation of Instance Normalization borrows from [Instance Normalization](https://github.com/DmitryUlyanov/texture_nets/blob/master/InstanceNormalization.lua). The shift operation is inspired by [style-swap](https://github.com/rtqichen/style-swap).
