@@ -39,6 +39,7 @@ cd Shift-Net
 bash  scripts/download_models.sh
 ```
 The model will be downloaded and unzipped.
+If you cannot have access to OneDrive, then you can try [BaiduCloud](https://pan.baidu.com/s/14r-TLhW2PVor-d_uhpHFjQ) to download our model.
 
 ### Train
 - Download your own dataset.
