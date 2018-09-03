@@ -104,11 +104,12 @@ th test.lua
 ```
 If you find this paper useful, please cite:
 ```
-@article{yan2018shift,
-  title={Shift-Net: Image Inpainting via Deep Feature Rearrangement},
-  author={Yan, Zhaoyi and Li, Xiaoming and Li, Mu and Zuo, Wangmeng and Shan, Shiguang},
-  journal={arXiv preprint arXiv:1801.09392},
-  year={2018}
+@InProceedings{Yan_2018_Shift,
+author = {Yan, Zhaoyi and Li, Xiaoming and Li, Mu and Zuo, Wangmeng and Shan, Shiguang},
+title = {Shift-Net: Image Inpainting via Deep Feature Rearrangement},
+booktitle = {The European Conference on Computer Vision (ECCV)},
+month = {September},
+year = {2018}
 }
 ```
 
