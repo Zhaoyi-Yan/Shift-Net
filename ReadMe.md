@@ -1,3 +1,8 @@
+# Architecutre
+<img src="architecture.png" width="1000"/> 
+
+# Shift layer
+<img src="shift_layer.png" width="800"/> 
 
 # Shift-Net
 Our code is based on `torch7`, however if you perfer pytorch, please click here [Shift-Net_pytorch](https://github.com/Zhaoyi-Yan/Shift-Net_pytorch).
