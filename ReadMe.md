@@ -5,11 +5,7 @@
 <img src="shift_layer.png" width="800"/> 
 
 # Shift-Net
-Our code is based on `torch7`, however if you perfer pytorch, please click here [Shift-Net_pytorch](https://github.com/Zhaoyi-Yan/Shift-Net_pytorch).
-for our pytorch implementation.
-
-**Note**: As pytorch is more flexible for reseraching compared to torch7. Besides, pytorch is in active developing, yet torch7 is in maintenance mode. We recommend that you try [Shift-Net_pytorch](https://github.com/Zhaoyi-Yan/Shift-Net_pytorch). It
-has been verfied that the pytorch version of code shows the similar performance. Moreover, I will refine that code from time to time.
+Our code is based on `torch7`. We recommend you firstly read the code of this version, it is easy to read. Then you may transfer you attention to [Shift-Net_pytorch](https://github.com/Zhaoyi-Yan/Shift-Net_pytorch) for more complicated operations. We are refining Shift-Net_pytorch a lot, trying to making its peformance satisfactory.
 
 <img src="./imgs/01_in.png" width="210"/> <img src="./imgs/01_out.png" width="210"/>
 <img src="./imgs/02_in.png" width="210"/> <img src="./imgs/02_out.png" width="210"/>
