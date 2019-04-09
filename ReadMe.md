@@ -5,7 +5,7 @@
 <img src="shift_layer.png" width="800"/> 
 
 # Shift-Net
-Our code is based on `torch7`. We recommend you firstly read the code of this version, it is easy to read. Then you may transfer you attention to [Shift-Net_pytorch](https://github.com/Zhaoyi-Yan/Shift-Net_pytorch) for more complicated operations. We are refining Shift-Net_pytorch a lot, trying to making its peformance satisfactory.
+Please refer to our code [Shift-Net_pytorch](https://github.com/Zhaoyi-Yan/Shift-Net_pytorch) based on Pytorch. It is much faster than this repository. As some code in this repository are implemented using `for-loop`, while the code of pytorch version [Shift-Net_pytorch](https://github.com/Zhaoyi-Yan/Shift-Net_pytorch) is fully-implemented parallelly.
 
 <img src="./imgs/01_in.png" width="210"/> <img src="./imgs/01_out.png" width="210"/>
 <img src="./imgs/02_in.png" width="210"/> <img src="./imgs/02_out.png" width="210"/>
