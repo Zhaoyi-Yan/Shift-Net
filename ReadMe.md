@@ -1,7 +1,5 @@
 # Shift-Net
-Please refer to our code [Shift-Net_pytorch](https://github.com/Zhaoyi-Yan/Shift-Net_pytorch) based on Pytorch. 
-
-This repository is **deprecated** ! Please refer to our pytorch version [Shift-Net_pytorch](https://github.com/Zhaoyi-Yan/Shift-Net_pytorch). That is much faster than this repository. As some code in this repository is implemented using `for-loop`, while the code of pytorch version [Shift-Net_pytorch](https://github.com/Zhaoyi-Yan/Shift-Net_pytorch) is fully-implemented parallelly.
+**This repository is deprecated** ! Please refer to our pytorch version [Shift-Net_pytorch](https://github.com/Zhaoyi-Yan/Shift-Net_pytorch). That is much faster than this repository. As some code in this repository is implemented using `for-loop`, while the code of pytorch version [Shift-Net_pytorch](https://github.com/Zhaoyi-Yan/Shift-Net_pytorch) is fully-implemented parallelly.
 
 
 
