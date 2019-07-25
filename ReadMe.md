@@ -7,11 +7,7 @@
 # Shift-Net
 Please refer to our code [Shift-Net_pytorch](https://github.com/Zhaoyi-Yan/Shift-Net_pytorch) based on Pytorch. It is much faster than this repository. As some code in this repository is implemented using `for-loop`, while the code of pytorch version [Shift-Net_pytorch](https://github.com/Zhaoyi-Yan/Shift-Net_pytorch) is fully-implemented parallelly.
 
-**Pytorch version: 8ms a 256\*256 image for reference**
-
-**Torch version: 80ms a 256\*256 image for reference**
-
-So we strongly suggest you have a look at our pytorch version.
+This repository is desperated! Please refer to our pytorch version [Shift-Net_pytorch](https://github.com/Zhaoyi-Yan/Shift-Net_pytorch).
 
 <img src="./imgs/01_in.png" width="210"/> <img src="./imgs/01_out.png" width="210"/>
 <img src="./imgs/02_in.png" width="210"/> <img src="./imgs/02_out.png" width="210"/>
@@ -24,91 +20,7 @@ So we strongly suggest you have a look at our pytorch version.
 <img src="./imgs/r_03_in.png" width="210"/> <img src="./imgs/r_03_out.png" width="210"/>
 <img src="./imgs/r_04_in.png" width="210"/> <img src="./imgs/r_04_out.png" width="210"/>
 
-## Getting Started
-We expect you have an nvidia GPU and have installed CUDA.
-The code does not support running on CPU for now.
-### Installation
-- Install torch and dependencies from https://github.com/torch/distro
-- Install torch packages `nngraph`, `cudnn`, `display`
-```bash
-luarocks install nngraph
-luarocks install cudnn
-luarocks install https://raw.githubusercontent.com/szym/display/master/display-scm-0.rockspec
-```
-- Clone this repo:
-```bash
-git clone https://github.com/Zhaoyi-Yan/Shift-Net
-cd Shift-Net
-```
 
-### Download pre-trained model
-```bash
-bash  scripts/download_models.sh
-```
-The model will be downloaded and unzipped.
-If you cannot have access to OneDrive, then you can try [BaiduCloud](https://pan.baidu.com/s/14r-TLhW2PVor-d_uhpHFjQ) to download our model.
-
-### Train
-- Download your own dataset.
-
-- Change the options in `train.lua` according to your path of dataset.
-Normally, you should at least specify three options.
-They are `DATA_ROOT`, `phase` and `name`.
-
-For example:
-
-`DATA_ROOT`: `./datasets/Paris_StreetView_Dataset/`
-
-`phase`:     `paris_train`
-
-`name`:      `paris_train_shiftNet`
-
-This means that the training images are under the folder of `./datasets/Paris_StreetView_Dataset/paris_train/`.
-As for `name`, it gives your experiment a name, e.g., `paris_train_shiftNet`. When training, the checkpoints are stored under the folder
-`./checkpoints/paris_train_shiftNet/`.
-
-
-
-- Train a model:
-```bash
-th train.lua
-```
-
-- Display the temporary results on the browser.
-Set `display = 1`, and then open another console, 
-```bash
-th -ldisplay.start
-```
-- Open this URL in your browser: [http://localhost:8000](http://localhost:8000)
-
-- If you want to train a model that can handle random mask inpainting, then set
-
-`mask_type`: `'random'`
-
-`fixed_mask`: `false`
-
-You can set a float number to `res`, e.g., `local res = 0.06`, the lower it is, the more continuous the output will be.
-When test the model, these two options should keep consistent with those that you model are trained with.
-
-### Test
-Before test, you should change `DATA_ROOT`, `phase`, `name`, `checkpoint_dir` and `which_epoch`.
-For example, if you want to test the 30-th epoch of your trained model, then
-
-`DATA_ROOT`:    `./datasets/Paris_StreetView_Dataset/`
-
-`phase`:        `paris_train`
-
-`name`:         `paris_train_shiftNet`
-
-`checkpoint_dir`:`./checkpoints/`
-
-`which_epoch`: `'30'`
-
-The first two options determine where the dataset is, and the rest define the folder where the model is stored.
-- Finally, test the model:
-```bash
-th test.lua
-```
 If you find this paper useful, please cite:
 ```
 @InProceedings{Yan_2018_Shift,
